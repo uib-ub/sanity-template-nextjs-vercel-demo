@@ -16,11 +16,11 @@ export function IDPage({ data }: { data: any }) {
         <div className='w-full flex gap-5 mt-64'>
           <div className="w-24">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={hasThumbnail} alt={label.no} />
+            <img src={hasThumbnail} alt={label?.no || 'Missing label'} />
           </div>
 
           {/* Header */}
-          <Header title={label.no} />
+          <Header title={label?.no || 'Missing label'} />
         </div>
 
         {/* Workaround: scroll to top on route change */}
