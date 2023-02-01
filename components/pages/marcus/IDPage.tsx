@@ -1,4 +1,4 @@
-import ManifestViewer from 'components/pages/marcus/ManifestViewer'
+import CloverIIIF from 'components/pages/marcus/ManifestViewer'
 import { Header } from 'components/shared/Header'
 import ScrollUp from 'components/shared/ScrollUp'
 
@@ -10,7 +10,7 @@ export function IDPage({ data }: { data: any }) {
       <div className="mb-14 flex flex-wrap gap-5">
         <div className='w-full p-2 border-2 border-cyan-700/80 rounded'>
           <div className='italic'>Client side component</div>
-          {subjectOfManifest ? <ManifestViewer id={subjectOfManifest} /> : null}
+          {subjectOfManifest ? <CloverIIIF id={subjectOfManifest} /> : null}
         </div>
 
         <div className='w-full flex gap-5 mt-64'>
