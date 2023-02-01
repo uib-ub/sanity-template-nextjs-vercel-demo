@@ -3,6 +3,8 @@ import { SiteMeta } from 'components/global/SiteMeta'
 import { getHomePageTitle, getPageBySlug, getSettings } from 'lib/sanity.client'
 import { getPreviewToken } from 'lib/sanity.server.preview'
 
+export const revalidate = 10;
+
 export default async function PageHead() {
   const token = getPreviewToken()
 

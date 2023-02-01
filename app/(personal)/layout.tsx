@@ -7,6 +7,8 @@ import IntroTemplate from 'intro-template'
 import { getSettings } from 'lib/sanity.client'
 import { getPreviewToken } from 'lib/sanity.server.preview'
 
+export const revalidate = 60;
+
 export default async function IndexRoute({
   children,
 }: {

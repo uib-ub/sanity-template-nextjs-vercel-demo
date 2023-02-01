@@ -6,6 +6,8 @@ import { getHomePage } from 'lib/sanity.client'
 import { getPreviewToken } from 'lib/sanity.server.preview'
 import { notFound } from 'next/navigation'
 
+export const revalidate = 60;
+
 export default async function IndexRoute() {
   const token = getPreviewToken()
   const data = (await getHomePage({ token })) || {
