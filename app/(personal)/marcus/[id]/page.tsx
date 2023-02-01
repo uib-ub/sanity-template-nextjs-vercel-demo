@@ -2,7 +2,7 @@ import { IDPage } from 'components/pages/marcus/IDPage';
 import { notFound } from 'next/navigation'
 
 async function getData({ id }: { id: string }) {
-  const res = await fetch(`https://api-ub.vercel.app/items/${id}`);
+  const res = await fetch(`https://api-ub.vercel.app/items/${id}`, { next: { revalidate: 7200 } });
 
   // Recommendation: handle errors
   if (!res.ok) {

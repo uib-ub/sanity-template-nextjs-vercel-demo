@@ -2,7 +2,7 @@ import { ListItem } from 'components/pages/marcus/ListItem';
 import { notFound } from 'next/navigation'
 
 async function getData() {
-  const res = await fetch(`https://api-ub.vercel.app/items`);
+  const res = await fetch(`https://api-ub.vercel.app/items`, { next: { revalidate: 7200 } });
 
   // Recommendation: handle errors
   if (!res.ok) {

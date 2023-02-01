@@ -6,7 +6,7 @@ export function ListItem({ data }: { data: any }) {
   return (
     <div className="mb-14 flex gap-5">
       <Link href={`/marcus/${identifier}`}>
-        <div className="w-48">
+        <div className="w-48 shadow-gray-500 shadow-lg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={image} alt={label?.no || 'Missing label'} />
         </div>

@@ -13,9 +13,6 @@ export function Navbar({ menuItems }: NavbarProps) {
       <Link href={`/`}>
         <UiBIcon className='w-5 h-5' />
       </Link>
-      <Link href={`/marcus`}>
-        Marcus
-      </Link>
       {menuItems &&
         menuItems.map((menuItem, key) => {
           const href = resolveHref(menuItem?._type, menuItem?.slug)
@@ -35,6 +32,12 @@ export function Navbar({ menuItems }: NavbarProps) {
             </Link>
           )
         })}
+      <Link
+        href={`/marcus`}
+        className='text-lg hover:text-black md:text-xl text-gray-600'
+      >
+        Marcus
+      </Link>
     </div>
   )
 }
