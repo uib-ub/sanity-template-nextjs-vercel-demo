@@ -1,6 +1,9 @@
-import CloverIIIF from 'components/pages/marcus/ManifestViewer'
 import { Header } from 'components/shared/Header'
 import ScrollUp from 'components/shared/ScrollUp'
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+const ManifestViewer = dynamic(() => import("./ManifestViewer"), { ssr: false })
 
 export function IDPage({ data }: { data: any }) {
   const { label, hasThumbnail, subjectOfManifest } = data
@@ -8,9 +11,14 @@ export function IDPage({ data }: { data: any }) {
   return (
     <div>
       <div className="mb-14 flex flex-wrap gap-5">
-        <div className='w-full p-2 border-2 border-cyan-700/80 rounded'>
-          <div className='italic'>Client side component</div>
-          {subjectOfManifest ? <CloverIIIF id={subjectOfManifest} /> : null}
+        <div className='w-full min-h-[780px] p-3 border-2 border-red-200/80 rounded relative'>
+          <div className='italic bg-red-200 px-1 inline-block absolute -top-3 left-2'><span>Client component</span></div>
+          {subjectOfManifest ?
+            <Suspense fallback={<div>Loading...</div>}>
+              <ManifestViewer id={subjectOfManifest} />
+            </Suspense>
+            : null
+          }
         </div>
 
         <div className='w-full flex gap-5 mt-64'>
