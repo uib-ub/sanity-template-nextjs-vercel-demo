@@ -8,7 +8,8 @@ export function IDPage({ data }: { data: any }) {
   return (
     <div>
       <div className="mb-14 flex flex-wrap gap-5">
-        <div className='w-full'>
+        <div className='w-full p-2 border-2 border-cyan-700/80 rounded'>
+          <div className='italic'>Client side component</div>
           {subjectOfManifest ? <ManifestViewer id={subjectOfManifest} /> : null}
         </div>
 
